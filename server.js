@@ -7,7 +7,7 @@ const { PORT } = process.env;
 const app = express();
 
 app.use(cors({
-  origin: 'https://66b3c65d4a01a20cb45e2dc4--listyco-movie-list.netlify.app/',
+  origin: 'https://listyco-movie-list.netlify.app/',
   credentials: true
 }));
 
