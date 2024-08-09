@@ -3,14 +3,19 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const Movie = require('./models/Movie');
+const movieRouter = require("./routes/movieRouter"); //import my routs files 
 const { PORT } = process.env;
 const app = express();
 
+require("dotenv").config();
+
 app.use(cors({
-  origin: 'https://66b3c65d4a01a20cb45e2dc4--listyco-movie-list.netlify.app/',
+  origin: 'https://movielistbysumayaandjimmy.netlify.app',
   credentials: true
 }));
+
 app.use(express.json());
+
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
@@ -23,6 +28,8 @@ app.post('/movies', async (req, res) => {
     res.status(400).send(error);
   }
 });
+
+
 app.get('/movies', async (req, res) => {
   try {
     const movies = await Movie.find({});
@@ -42,6 +49,10 @@ app.get('/movies/:id', async (req, res) => {
     res.status(500).send();
   }
 });
+
+app.use("/movies", movieRouter);// all movies routes 
+
+
 app.patch('/movies/:id', async (req, res) => {
   try {
     const movie = await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
