@@ -14,13 +14,12 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.use("/movies", movieRouter);// all movies routes
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
 
-
-app.use("/movies", movieRouter);// all movies routes
 
 app.post('/movies', async (req, res) => {
   try {
