@@ -19,6 +19,7 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
+
 app.post('/movies', async (req, res) => {
   try {
     const movie = new Movie(req.body);
@@ -29,7 +30,6 @@ app.post('/movies', async (req, res) => {
   }
 });
 
-
 app.get('/movies', async (req, res) => {
   try {
     const movies = await Movie.find({});
@@ -38,6 +38,7 @@ app.get('/movies', async (req, res) => {
     res.status(500).send();
   }
 });
+
 app.get('/movies/:id', async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
@@ -64,6 +65,7 @@ app.patch('/movies/:id', async (req, res) => {
     res.status(400).send(error);
   }
 });
+
 app.delete('/movies/:id', async (req, res) => {
   try {
     const movie = await Movie.findByIdAndDelete(req.params.id);
@@ -75,7 +77,10 @@ app.delete('/movies/:id', async (req, res) => {
     res.status(500).send();
   }
 });
+
 app.get("/", (req, res) => {
   res.send("hello world");
 });
+
+
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
