@@ -8,8 +8,7 @@ const { PORT } = process.env;
 const app = express();
 
 app.use(cors({
-  origin: '*',
-  //origin: 'https://movielistbysumayaandjimmy.netlify.app'
+  origin: 'https://movielistbysumayaandjimmy.netlify.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type'],
 }));
