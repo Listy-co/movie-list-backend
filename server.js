@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
 const Movie = require('./models/Movie');
-const movieRouter = require("./routes/movieRouter"); //import my routs files 
+const movieRouter = require("./routes/MovieRoutes"); //import my routs files 
 const { PORT } = process.env;
 const app = express();
 
