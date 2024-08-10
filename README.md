@@ -11,7 +11,6 @@ This is the backend of the Movie Application, built using Node.js, Express, and 
 - Get movie details by ID
 - Update movie details
 - Delete a movie
-- User (login and registration)
 
 ## Technologies Used
 - Node.js
