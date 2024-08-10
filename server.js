@@ -1,13 +1,13 @@
 require("dotenv").config();
+const cors = require("cors");
 const { PORT } = process.env;
 const express = require("express");
 const app = express();
 const routes = require('./routes/index')
 
-
-const cors = require("cors");
-
-app.use(cors());
+app.use(cors({
+    origin: 'https://listycomovielist.netlify.app'
+}));
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use('/', routes) 
