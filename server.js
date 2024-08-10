@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require('cors');
 const mongoose = require("mongoose");
-const Movie = require('./models/Movie');
+const movie = require('./models/Movie');
 const movieRouter = require("./routes/MovieRoutes"); //import my routs files 
 const { PORT } = process.env;
 const app = express();
@@ -10,7 +10,7 @@ const app = express();
 app.use(cors());
 
 app.use(express.json());
-app.use("/movies", movieRouter);// all movies routes
+app.use('/movie', movieRouter);// all movies routes
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('MongoDB connected...'))
