@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require('cors');
+const mongoose = require("mongoose");
 const Movie = require('./models/Movie');
 const movieRouter = require("./routes/MovieRoutes"); //import my routs files 
 const { PORT } = process.env;
