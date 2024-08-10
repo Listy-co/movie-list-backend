@@ -7,11 +7,7 @@ const movieRouter = require("./routes/MovieRoutes"); //import my routs files
 const { PORT } = process.env;
 const app = express();
 
-app.use(cors({
-  origin: 'https://movielistbysumayaandjimmy.netlify.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
-}));
+app.use(cors());
 
 app.use(express.json());
 app.use("/movies", movieRouter);// all movies routes
