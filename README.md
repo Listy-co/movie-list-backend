@@ -19,3 +19,5 @@ This is the backend of the Movie Application, built using Node.js, Express, and 
 - Mongoose
 - dotenv (for environment variables)
 - cors (for handling CORS)
+
+MongoDB Atlas Link: https://cloud.mongodb.com/v2/66ad41071c9b9f6dcab5911d#/metrics/replicaSet/66ad41490870c0563b697570/explorer/test/movies/find
