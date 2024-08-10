@@ -1,21 +1,21 @@
 Link to main application: https://github.com/Listy-co/movie-list
 
-# movie-list-frontend
+# movie-list-backend
 
 ## Description
-
-This is the frontend of the Movie Application, built using React. It allows users to add, view, edit, and delete movies. The application also includes user authentication features.
+This is the backend of the Movie Application, built using Node.js, Express, and MongoDB. It provides RESTful APIs for managing movies and user authentication.
 
 ## Features
-
-- View a list of movies
 - Add a new movie
-- Edit movie details
+- Get a list of movies
+- Get movie details by ID
+- Update movie details
 - Delete a movie
-- View movie details
 
 ## Technologies Used
-
-- React
-- React Router
-- CSS
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- dotenv (for environment variables)
+- cors (for handling CORS)
